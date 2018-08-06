@@ -7,11 +7,11 @@ Very easy to use. No npm installs
 Include the file every where you would need data.
 
 ```javascript
-  import Boobs from 'boobs'
+  import {UpdateData,AddChangeEventWithArray,AddChangeEventWithObject,GetData}  from 'boobs'
   
   //Add an event hook for when a particular data key changes
   //State is useful when you want to pass along parameters but not globlly
-  Boobs.AddChangeEventWithObject({Image2Seen: (Data,State)=>
+  AddChangeEventWithObject({Image2Seen: (Data,State)=>
             {
                 if(State && State.ShouldSetSetState)
                 {
@@ -27,18 +27,18 @@ Include the file every where you would need data.
 Update the Data
 ```javascript
 
-  Boubs.UpdateData({Image2Seen:true});
+  UpdateData({Image2Seen:true});
 ```  
 or
 ```javascript  
   
- Boubs.UpdateData({Image2Seen:true},{ShouldSetState:true});
+ UpdateData({Image2Seen:true},{ShouldSetState:true});
 ```
 
 You can also bind a lot of keys to one hook with 
 ```javascript
 
-   Boobs.AddChangeEventWithArray(["Image2Seen"], (Data,State)=>
+   AddChangeEventWithArray(["Image2Seen"], (Data,State)=>
             {
                 this.setState(Data);
             }
