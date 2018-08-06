@@ -28,6 +28,11 @@ Update the Data
 ```javascript
 
   Boubs.UpdateData({Image2Seen:true});
+```  
+or
+```javascript  
+  
+ Boubs.UpdateData({Image2Seen:true},{ShouldSetState:true});
 ```
 
 You can also bind a lot of keys to one hook with 
