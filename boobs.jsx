@@ -32,3 +32,8 @@ export default class Boubs
     }
 
 }
+
+export const UpdateData = Boubs.UpdateData;
+export const AddChangeEventWithObject = Boubs.AddChangeEventWithObject;
+export const AddChangeEventWithArray = Boubs.AddChangeEventWithArray;
+export const GetData = (Key)=>Boubs.Data[Key];
