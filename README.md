@@ -20,9 +20,19 @@ Include the file every where you would need data.
 
 # A little bit later
 
+Update the Data
 ```javascript
 
   Boubs.UpdateData({Image2Seen:true});
 ```
 
-Update the Data
+You can also bind a lot of keys to one hook with 
+```javascript
+
+   Boobs.AddChangeEventWithArray(["Image2Seen"], (Data)=>
+            {
+                this.setState(Data);
+            }
+        });
+```
+
