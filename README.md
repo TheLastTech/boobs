@@ -10,9 +10,13 @@ Include the file every where you would need data.
   import Boobs from 'boobs'
   
   //Add an event hook for when a particular data key changes
-  Boobs.AddChangeEventWithObject({Image2Seen: (Data)=>
+  //State is useful when you want to pass along parameters but not globlly
+  Boobs.AddChangeEventWithObject({Image2Seen: (Data,State)=>
             {
-                this.setState(Data);
+                if(State && State.ShouldSetSetState)
+                {
+                  this.setState(Data);
+                }
             }
         });
         
@@ -29,7 +33,7 @@ Update the Data
 You can also bind a lot of keys to one hook with 
 ```javascript
 
-   Boobs.AddChangeEventWithArray(["Image2Seen"], (Data)=>
+   Boobs.AddChangeEventWithArray(["Image2Seen"], (Data,State)=>
             {
                 this.setState(Data);
             }
