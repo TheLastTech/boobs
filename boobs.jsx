@@ -16,7 +16,7 @@ export default class Boubs
         })
     }
 
-    static UpdateData(Obj){
+    static UpdateData(Obj,State){
         let Keys = Object.keys(Obj);
         Keys.forEach(Key=>{
             Boubs.Data[Key] = Obj[Key];
@@ -25,7 +25,7 @@ export default class Boubs
             Boubs.ChangeEvents.forEach(Event=>{
                 let FuncData = {};
                 FuncData[Key] = Boubs.Data[Key];
-                if(Event.Key === Key) Event.Func(FuncData);
+                if(Event.Key === Key) Event.Func(FuncData,State);
             })
 
         })
